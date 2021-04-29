@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using TrainingCGI1.Data;
 using TrainingCGI1.Pages.Modul3;
 using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
+using TrainingCGI1.Pages;
 
 namespace TrainingCGI1
 {
@@ -33,6 +34,7 @@ namespace TrainingCGI1
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<FakeVM>();
             services.AddHttpContextAccessor();
+            services.AddSingleton<ChatVM>();
             
         }
 
