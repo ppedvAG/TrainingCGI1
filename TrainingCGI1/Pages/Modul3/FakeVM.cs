@@ -7,6 +7,8 @@ namespace TrainingCGI1.Pages.Modul3
 {
     public class FakeVM
     {
+
+        public string User { get; set; }
         public List<string> Tage { get; set; }
        public void Init()
         {
@@ -15,6 +17,8 @@ namespace TrainingCGI1.Pages.Modul3
             {
                 Tage.Add(DateTime.Now.AddDays(i).ToString("dddd"));
             }
+
+
 
         }
     }

@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNetCore.Http 
+@inject IHttpContextAccessor ctx 
+@ctx.HttpContext.User.Identity.Name
+
+@code {
+
+}
