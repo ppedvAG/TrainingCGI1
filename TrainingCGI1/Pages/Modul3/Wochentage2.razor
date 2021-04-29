@@ -1,0 +1,24 @@
+﻿@page "/wt2"
+@inject FakeVM vm
+<h3>Wochentage2</h3>
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item active" aria-current="true">Wochentage</li>
+            @foreach (var item in vm.Tage)
+            {
+                <li class="list-group-item list-group-item-action" >
+                    @item
+                </li>
+            }
+        </ul>
+    </div>
+
+</div>
+@code { 
+    protected override void OnInitialized()
+    {
+        vm.Init();
+    }
+
+}
