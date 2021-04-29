@@ -1,0 +1,23 @@
+﻿@page "/cb"
+<h3>Checkbox1</h3>
+<input type="text" @bind="MyProperty2" />
+<h1 style='@(MyProperty?"text-decoration:line-through;":"")'>@MyProperty2</h1>
+<input type="text" @bind="MyProperty2" />
+<hr />
+<input type="checkbox" @bind="MyProperty" />
+@if (MyProperty)
+{
+    <div class="alert-danger"> Alarm</div>
+
+}
+else
+{
+    <div class="alert-info">Alles OK</div>
+
+}
+
+
+@code {
+    public bool MyProperty { get; set; }
+    public string MyProperty2 { get; set; }
+}
