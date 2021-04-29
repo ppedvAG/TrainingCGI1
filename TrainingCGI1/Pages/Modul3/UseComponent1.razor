@@ -1,0 +1,26 @@
+﻿@page "/uc"
+<h3>UseComponent1</h3>
+<Component MyProperty="Hallo Welt" @ref="MyComp"></Component>
+@code {
+    Component MyComp;
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            MyComp.MyProperty = "Hannes Propertx";
+            //Eigenschaft wird nicht gesetzt, wegen 2tem Rendering 
+            StateHasChanged();
+
+        }
+
+
+
+    }
+
+}
