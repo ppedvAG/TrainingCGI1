@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TrainingCGI1.Data;
 using TrainingCGI1.Pages.Modul3;
+using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage;
 
 namespace TrainingCGI1
 {
@@ -32,6 +33,7 @@ namespace TrainingCGI1
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<FakeVM>();
             services.AddHttpContextAccessor();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

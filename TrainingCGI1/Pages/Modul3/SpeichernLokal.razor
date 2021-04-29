@@ -1,0 +1,30 @@
+﻿@page "/sl"
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage 
+@inject ProtectedLocalStorage _ls
+<h3>SpeichernLokal</h3>
+<input @bind="MyProperty" />
+<button @onclick="save"> speichern</button>
+
+@code {
+    public string MyProperty { get; set; }
+
+    void save()
+
+    {
+        _ls.SetAsync("key", MyProperty);
+    }
+    protected override  async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var x = await _ls.GetAsync<string>("key");
+
+            if (x.Success)
+            {
+                MyProperty = x.Value;
+                StateHasChanged();
+            }
+        }
+    }
+
+}
