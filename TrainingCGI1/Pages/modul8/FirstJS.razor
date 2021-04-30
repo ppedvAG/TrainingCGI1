@@ -1,0 +1,24 @@
+﻿@page "/firstjs"
+@inject IJSRuntime JSRuntime
+<h3>FirstJS</h3>
+
+<button @onclick="call">JS</button>
+<button @onclick="call2">JS2</button>
+<button @onclick="call3">page title</button>
+@code {
+    void call()
+    {
+        JSRuntime.InvokeVoidAsync("alert", "Hallo Welt");
+        //localStorage.setItem('myCat', 'Tom');
+
+        JSRuntime.InvokeVoidAsync("localStorage.setItem", "Key","Wert");
+    }
+    async void call2()
+    {
+        var s= await  JSRuntime.InvokeAsync<string>("prompt", "geben sie was ein");
+    }
+    void call3()
+    {
+        JSRuntime.InvokeVoidAsync("eval", "document.title = 'Mein Page Title';");
+    }
+}
