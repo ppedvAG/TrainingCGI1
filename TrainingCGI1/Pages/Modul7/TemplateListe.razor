@@ -1,0 +1,18 @@
+﻿@typeparam ItemType
+<div class="list-group">
+    @foreach (var item in Daten)
+    {
+        <div class="list-group-item">
+            @ItemTemplate(item)
+        </div>
+    }
+
+</div>
+
+@code {
+    [Parameter]
+    public List<ItemType> Daten { get; set; }
+    [Parameter]
+    public RenderFragment<ItemType> ItemTemplate { get; set; }
+
+}

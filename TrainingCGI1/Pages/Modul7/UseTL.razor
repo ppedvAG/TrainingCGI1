@@ -1,0 +1,21 @@
+﻿@page "/tl"
+<h3>UseTL</h3>
+<TemplateListe ItemType="Aufgaben" Daten="Liste" Context="Item">
+    <ItemTemplate>
+        <div class="row">
+            <div class="col-1">@Item.ID</div>
+            <div class="col-11">@Item.Text</div>
+        </div>
+    </ItemTemplate>
+</TemplateListe>
+
+
+@code {
+    public List<Aufgaben> Liste { get; set; } = new List<Aufgaben>();
+    protected override void OnInitialized()
+    {
+        Liste.Add(new Aufgaben() { ID = 1, Text = "text sdfghjklö" });
+        Liste.Add(new Aufgaben() { ID = 2, Text = "text gdfjgjk khuj" });
+        Liste.Add(new Aufgaben() { ID = 3, Text = "text drsh dfjgh" });
+    }
+}
