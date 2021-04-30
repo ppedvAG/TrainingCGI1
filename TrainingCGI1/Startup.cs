@@ -35,6 +35,7 @@ namespace TrainingCGI1
             services.AddSingleton<FakeVM>();
             services.AddHttpContextAccessor();
             services.AddSingleton<ChatVM>();
+            services.AddHttpClient();
             
         }
 
