@@ -1,7 +1,9 @@
 ﻿@page "/person"
 @page "/person/{id:int}"
 <h3>PersinEdit</h3>
-<EditForm Model="MyPerson" OnSubmit="speicher">
+<EditForm 
+          EditContext="_EditContext"
+          OnSubmit="speicher">
     <DataAnnotationsValidator></DataAnnotationsValidator>
     <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label">Größe</label>
@@ -37,8 +39,15 @@
     [Parameter]
     public int ID { get; set; }
     public Person MyPerson { get; set; } = new Person();
+    EditContext _EditContext;
     void speicher()
     {
+
+    }
+    protected override void OnInitialized()
+    {
+        _EditContext = new EditContext(MyPerson);
+        _EditContext.SetFieldCssClassProvider(new CSSFormClassProvider()); 
 
     }
 }
