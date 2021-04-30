@@ -10,12 +10,12 @@ namespace TrainingCGI1.Pages.modul5
     {
         public int ID { get; set; }
         [Required(ErrorMessage = "Da amuss was rein")]
+        [Range(minimum: 140, maximum: 195, ErrorMessage = "keine Achterbahn")]
         public int Gross { get; set; }
         [Required(ErrorMessage ="Da amuss was rein")]
-        [Range(minimum:140,maximum:195,ErrorMessage ="keine Achterbahn")]
+        [StringLength(maximumLength: 20, ErrorMessage = "zu lange")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Da amuss was rein")]
-        [StringLength(maximumLength:20,ErrorMessage ="zu lange")]
+        
         public DateTime GebDat { get; set; }
     }
 }
