@@ -1,0 +1,27 @@
+﻿@page "/modal" 
+<h3>UseModal</h3>
+<PpedvModal @ref="mymodal" Titel="Wichtige Eingabe" OnSave="Save">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" @bind="Email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+</PpedvModal>
+
+<button class="btn btn-success" @onclick="open">OPEN</button>
+@code {
+    PpedvModal mymodal;
+
+    string Email;
+
+    void open()
+    {
+        mymodal.Show();
+    }
+    void Save()
+        {
+
+
+        }
+}
