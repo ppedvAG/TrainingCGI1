@@ -1,0 +1,14 @@
+﻿@page "/uselib" 
+@using RazorClassLibrary1
+@inject IJSRuntime JSRuntime;
+<h3>UseLib</h3>
+<button @onclick="click">click</button>
+
+@code {
+   async void click()
+    {
+        var o = new ExampleJsInterop(JSRuntime);
+       var ret=await o.Prompt("Meine Nachricht");
+          
+    }
+}
